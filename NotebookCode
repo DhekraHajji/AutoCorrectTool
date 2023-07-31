@@ -1,0 +1,17 @@
+import difflib
+
+# Sample list of words (you can customize this list)
+word_list = ['apple', 'banana', 'orange', 'grape', 'mango', 'kiwi', 'pear']
+
+def autocorrect(word, word_list):
+    closest_match = difflib.get_close_matches(word, word_list, n=1)
+    if closest_match:
+        return closest_match[0]
+    else:
+        return "No match found."
+
+# Test the auto-correct tool
+input_word = "banan"
+corrected_word = autocorrect(input_word, word_list)
+print(f"Original word: {input_word}")
+print(f"Corrected word: {corrected_word}")
